@@ -43,6 +43,9 @@ $info = [
 	'Xdebug' => extension_loaded('xdebug') ? phpversion('xdebug') : null,
 	'Tracy' => Debugger::VERSION,
 	'Server' => $_SERVER['SERVER_SOFTWARE'] ?? null,
+	'Server Name' => $_SERVER['SERVER_NAME'] ?? null,
+	'User Agent' => $_SERVER['HTTP_USER_AGENT'] ?? null,
+	'WIRING' => $getenv['WIRING'] ?? null,
 ];
 
 $info = array_map('strval', array_filter($info + (array) $this->data));
